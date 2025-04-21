@@ -1,27 +1,24 @@
 # Python cache
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Env file (jangan upload info sensitif)
-.env
-.env.*
+*.pyc
+*.pyo
+*.pyd
 
 # Virtual environment
 venv/
 env/
 
-# VSCode dan IDE lainnya
+# Environment variables
+.env
+.env.*
+
+# IDE/editor
 .vscode/
 .idea/
 
-# MacOS files
+# OS
 .DS_Store
 
-# Pytest cache
+# Test/cache
 .pytest_cache/
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
+*.log
