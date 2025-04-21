@@ -1,4 +1,5 @@
-Flask
+flask
 requests
 pycryptodome
-protobuf_decoder
+protobuf
+protobuf-decoder @ git+https://github.com/sidneys/protobuf-decoder.git
