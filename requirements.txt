@@ -3,4 +3,4 @@ requests
 pycryptodome
 protobuf
 python-dotenv
-protobuf-decoder @ git+https://github.com/pawitp/protobuf-decoder.git
+from protobuf_decoder.protobuf_decoder import Parser
