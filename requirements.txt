@@ -3,4 +3,3 @@ requests
 pycryptodome
 protobuf
 python-dotenv
-from protobuf_decoder.protobuf_decoder import Parser
