@@ -1,8 +1,7 @@
-# Python cache
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 
 # Virtual environment
 venv/
@@ -10,15 +9,12 @@ env/
 
 # Environment variables
 .env
-.env.*
 
-# IDE/editor
+# VS Code settings (optional, kalau pakai VS Code)
 .vscode/
-.idea/
 
-# OS
+# macOS
 .DS_Store
 
-# Test/cache
-.pytest_cache/
-*.log
+# PyCharm
+.idea/
