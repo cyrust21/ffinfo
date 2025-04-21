@@ -3,3 +3,4 @@ requests
 pycryptodome
 protobuf
 protobuf-decoder @ git+https://github.com/sidneys/protobuf-decoder.git
+python-dotenv
