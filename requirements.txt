@@ -2,5 +2,5 @@ flask
 requests
 pycryptodome
 protobuf
-protobuf-decoder @ git+https://github.com/pawitp/protobuf-decoder.git
 python-dotenv
+protobuf-decoder @ git+https://github.com/pawitp/protobuf-decoder.git
