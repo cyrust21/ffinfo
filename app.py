@@ -14,8 +14,9 @@ app = Flask(__name__)
 #DEFAULT_PASS = "3EC146CD4EEF7A640F2967B06D7F4413BD4FB37382E0ED260E214E8BACD96734"
 import os
 
-DEFAULT_UID = os.getenv("UID")
-DEFAULT_PASS = os.getenv("PASS")
+DEFAULT_UID = os.getenv("DEFAULT_UID")
+DEFAULT_PASS = os.getenv("DEFAULT_PASS")
+
 
 JWT_GEN_URL = "https://ariflexlabs-jwt-gen.onrender.com/fetch-token"
 
