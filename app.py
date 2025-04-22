@@ -99,6 +99,33 @@ def get_available_room(input_text):
     return json.dumps(parsed_results_dict)
 
 @app.route('/api/player-info', methods=['GET'])
+@app.route('/api/debug', methods=['GET'])
+def debug_info():
+    try:
+        jwt_token = get_jwt()
+        if not jwt_token:
+            return jsonify({
+                "status": "error",
+                "message": "Failed to generate JWT token",
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }), 500
+
+        return jsonify({
+            "status": "success",
+            "message": "Debug information",
+            "env_uid": DEFAULT_UID,
+            "env_pass": DEFAULT_PASS,
+            "jwt_token": jwt_token,
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        })
+
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": f"Debug error: {str(e)}",
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }), 500
+
 def get_player_info():
     try:
         player_id = request.args.get('id')
