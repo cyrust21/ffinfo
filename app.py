@@ -6,6 +6,9 @@ from Crypto.Util.Padding import pad, unpad
 from protobuf_decoder.protobuf_decoder import Parser
 from datetime import datetime
 import json
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 app = Flask(__name__)
 
