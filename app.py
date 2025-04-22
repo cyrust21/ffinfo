@@ -125,29 +125,31 @@ def get_player_info():
                 "credits": "Cyrust21",
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }), 500
+try:
+    data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
 
-data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
+    print("Encrypted ID:", Encrypt_ID(player_id))
+    print("Encrypted HEX:", encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
+    print("Data Bytes:", data)
 
-print("Encrypted ID:", Encrypt_ID(player_id))
-print("Encrypted HEX:", encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
-print("Data Bytes:", data)
+    url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
+    headers = {
+        'X-Unity-Version': '2018.4.11f1',
+        'ReleaseVersion': 'OB48',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-GA': 'v1 1',
+        'Authorization': f'Bearer {jwt_token}',
+        'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
+        'Host': 'client.ind.freefiremobile.com',
+        'Connection': 'Keep-Alive',
+        'Accept-Encoding': 'gzip'
+    }
 
-url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
-headers = {
-    'X-Unity-Version': '2018.4.11f1',
-    'ReleaseVersion': 'OB48',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'X-GA': 'v1 1',
-    'Authorization': f'Bearer {jwt_token}',
-    'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
-    'Host': 'client.ind.freefiremobile.com',  # <- HARUS ganti ini juga
-    'Connection': 'Keep-Alive',
-    'Accept-Encoding': 'gzip'
-}
+    response = requests.post(url, headers=headers, data=data, verify=False)
+    print("Response Text:", response.text)
 
-response = requests.post(url, headers=headers, data=data, verify=False)
-
-print("Response Text:", response.text)
+except Exception as e:
+    print("Error in GetPlayerPersonalShow:", str(e))
 
 
         if response.status_code == 200:
