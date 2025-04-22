@@ -26,8 +26,8 @@ JWT_GEN_URL = "https://ariflexlabs-jwt-gen.onrender.com/fetch-token"
 
 # GET JWT
 def get_jwt():
-        print("UID:", DEFAULT_UID)
-        print("PASS:", DEFAULT_PASS)
+    print("UID:", DEFAULT_UID)
+    print("PASS:", DEFAULT_PASS)
 
     try:
         params = {
