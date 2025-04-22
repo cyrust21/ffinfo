@@ -21,6 +21,7 @@ print("ENV PASS:", os.getenv("DEFAULT_PASS"))
 DEFAULT_UID = os.getenv("DEFAULT_UID")
 DEFAULT_PASS = os.getenv("DEFAULT_PASS")
 
+JWT_GEN_URL = "https://ariflexlabs-jwt-gen.onrender.com/fetch-token"
 
 
 # GET JWT
