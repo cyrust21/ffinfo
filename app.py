@@ -125,7 +125,7 @@ def get_player_info():
                 "credits": "Cyrust21",
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }), 500
-try:
+
     data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
 
     print("Encrypted ID:", Encrypt_ID(player_id))
