@@ -142,7 +142,10 @@ def get_player_info():
             'Connection': 'Keep-Alive',
             'Accept-Encoding': 'gzip'
         } # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
-
+print("Encrypted ID:", Encrypt_ID(player_id))
+print("Encrypted HEX:", encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
+print("Data Bytes:", data)
+print("Response Text:", response.text)
         response = requests.post(url, headers=headers, data=data, verify=False)
 
         if response.status_code == 200:
