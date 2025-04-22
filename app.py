@@ -136,7 +136,7 @@ data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
             'Authorization': f'Bearer {jwt_token}',
             'Content-Length': '16',
             'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
-            'Host': 'client.ind.freefiremobile.com',
+            'Host': 'clientbp.ggblueshark.com',
             'Connection': 'Keep-Alive',
             'Accept-Encoding': 'gzip'
         } # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
