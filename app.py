@@ -140,7 +140,7 @@ def get_player_info():
             'Authorization': f'Bearer {jwt_token}',
             'Content-Length': '16',
             'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
-            'Host': 'clientbp.ggblueshark.com',
+            'Host': 'client.us.freefiremobile.com',
             'Connection': 'Keep-Alive',
             'Accept-Encoding': 'gzip'
         } # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
