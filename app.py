@@ -103,7 +103,6 @@ def get_available_room(input_text):
     return json.dumps(parsed_results_dict)
 
 @app.route('/api/player-info', methods=['GET'])
-
 def get_player_info():
     try:
         player_id = request.args.get('id')
@@ -125,6 +124,7 @@ def get_player_info():
             }), 500
 
         data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
+        print("Data terenkripsi yang dikirim:", data.hex())
         url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
         headers = {
             'X-Unity-Version': '2018.4.11f1',
@@ -140,7 +140,8 @@ def get_player_info():
         } # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
 
         response = requests.post(url, headers=headers, data=data, verify=False)
-
+        print("Status code respons:", response.status_code)
+        print("Konten respons:", response.text)
         if response.status_code == 200:
             hex_response = binascii.hexlify(response.content).decode('utf-8')
             json_result = get_available_room(hex_response)
