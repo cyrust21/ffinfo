@@ -27,12 +27,15 @@ def get_jwt():
             'password': DEFAULT_PASS
         }
         response = requests.get(JWT_GEN_URL, params=params)
+        print("JWT response:", response.text)  # Tambahkan ini
         if response.status_code == 200:
             jwt_data = response.json()
             return jwt_data.get("JWT TOKEN")
         return None
     except Exception as e:
+        print("JWT error:", str(e))  # Tambahkan ini juga
         return None
+
         
 #DONT EDIT
 def Encrypt_ID(x):
