@@ -113,8 +113,11 @@ def get_player_info():
                 "credits": "TEAM-AKIRU",
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }), 400
-
+            # Tambahkan debug print
+            print("Mencoba ambil JWT token dengan UID:", DEFAULT_UID)
+            print("PASS:", DEFAULT_PASS)
         jwt_token = get_jwt()
+        print("Hasil JWT:", jwt_token)
         if not jwt_token:
             return jsonify({
                 "status": "error",
