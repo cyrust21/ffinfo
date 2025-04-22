@@ -25,6 +25,9 @@ DEFAULT_PASS = os.getenv("DEFAULT_PASS")
 
 # GET JWT
 def get_jwt():
+        print("UID:", DEFAULT_UID)
+    print("PASS:", DEFAULT_PASS)
+
     try:
         params = {
             'uid': DEFAULT_UID,
