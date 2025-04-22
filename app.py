@@ -23,7 +23,7 @@ JWT_GEN_URL = "https://ariflexlabs-jwt-gen.onrender.com/fetch-token"
 # GET JWT
 def get_jwt():
     print("UID:", DEFAULT_UID)
-print("PASS:", DEFAULT_PASS)
+    print("PASS:", DEFAULT_PASS)
 
     try:
         params = {
@@ -31,13 +31,13 @@ print("PASS:", DEFAULT_PASS)
             'password': DEFAULT_PASS
         }
         response = requests.get(JWT_GEN_URL, params=params)
-        print("JWT response:", response.text)  # Tambahkan ini
+        print("JWT response:", response.text)
         if response.status_code == 200:
             jwt_data = response.json()
             return jwt_data.get("JWT TOKEN")
         return None
     except Exception as e:
-        print("JWT error:", str(e))  # Tambahkan ini juga
+        print("JWT error:", str(e))
         return None
 
         
