@@ -131,7 +131,7 @@ def get_player_info():
 
         data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
         print("Data terenkripsi yang dikirim:", data.hex())
-        url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
+        url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
         headers = {
             'X-Unity-Version': '2018.4.11f1',
             'ReleaseVersion': 'OB48',
