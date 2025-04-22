@@ -131,19 +131,19 @@ def get_player_info():
 
         data = bytes.fromhex(encrypt_api(f"08{Encrypt_ID(player_id)}1007"))
         print("Data terenkripsi yang dikirim:", data.hex())
-url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
-headers = {
-    'X-Unity-Version': '2018.4.11f1',
-    'ReleaseVersion': 'OB48',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'X-GA': 'v1 1',
-    'Authorization': f'Bearer {jwt_token}',
-    'Content-Length': '16',
-    'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
-    'Host': 'client.us.freefiremobile.com',
-    'Connection': 'Keep-Alive',
-    'Accept-Encoding': 'gzip'
-} # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
+        url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
+        headers = {
+            'X-Unity-Version': '2018.4.11f1',
+            'ReleaseVersion': 'OB48',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-GA': 'v1 1',
+            'Authorization': f'Bearer {jwt_token}',
+            'Content-Length': '16',
+            'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.2; ASUS_Z01QD Build/QKQ1.190825.002)',
+            'Host': 'client.us.freefiremobile.com',
+            'Connection': 'Keep-Alive',
+            'Accept-Encoding': 'gzip'
+                } # CHANGE THIS API DEPENDING ON WHICH REGIONS YOU WANT IT TO WORK. 
 
         response = requests.post(url, headers=headers, data=data, verify=False)
         print("Status code respons:", response.status_code)
